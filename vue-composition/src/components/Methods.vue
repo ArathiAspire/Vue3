@@ -36,6 +36,7 @@ export default {
             state.lname = "Smith"
         }
         return {
+            
             count,
             incrementCount,
             ...toRefs(state),
