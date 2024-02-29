@@ -2,8 +2,11 @@
   <Data />
   <DemoOne />
   <DemoTwo />
-  <Methods/>
-  <ProvideInject/>
+
+  <Methods />
+
+  <ProvideInject />
+  <TemplateRefs />
 </template>
 
 <script>
@@ -12,6 +15,7 @@ import DemoOne from './components/DemoOne.vue';
 import DemoTwo from './components/DemoTwo.vue';
 import Methods from './components/Methods.vue';
 import ProvideInject from './components/ProvideInject.vue';
+import TemplateRefs from './components/TemplateRefs.vue';
 export default {
   name: 'App',
   components: {
@@ -19,7 +23,8 @@ export default {
     DemoOne,
     DemoTwo,
     Methods,
-    ProvideInject
+    ProvideInject,
+    TemplateRefs
   }
 }
 </script>

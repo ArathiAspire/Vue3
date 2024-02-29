@@ -3,6 +3,7 @@
         <h1 class="text-center">{{ user }}</h1>
         <ChildA/>
         <button @click="incrementCount">Increment Count in Parent</button>
+       
     </div>
 </template>
 
