@@ -3,6 +3,7 @@
   <DemoOne />
   <DemoTwo />
   <Methods/>
+  <ProvideInject/>
 </template>
 
 <script>
@@ -10,13 +11,15 @@ import Data from './components/Data.vue';
 import DemoOne from './components/DemoOne.vue';
 import DemoTwo from './components/DemoTwo.vue';
 import Methods from './components/Methods.vue';
+import ProvideInject from './components/ProvideInject.vue';
 export default {
   name: 'App',
   components: {
     Data,
     DemoOne,
     DemoTwo,
-    Methods
+    Methods,
+    ProvideInject
   }
 }
 </script>
