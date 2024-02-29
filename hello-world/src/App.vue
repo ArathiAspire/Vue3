@@ -1,62 +1,92 @@
 <template>
   <div>
-    <div>{{ greet }} {{ name }}</div>
-    <div v-html="greet"></div>
-    <h1 class="underline">Heading</h1>
-    <h2 :class="isPromoted && 'promoted'">Promoted movie</h2>
-    <h2 :class="isNew ? 'new' : 'soldout'">New Movie</h2>
-    <h2 :class="['new', 'promoted']">Newly Promoted</h2>
-    <h2 :class="[isPromoted && 'promoted', isSoldout && 'soldout']">Array conditional movie</h2>
-    <h2 :style="{ color: highlightColor, fontSize: headerSize + 'px', padding: '20px' }">Inline Style</h2>
-    <h2 :style="headerStyleObject">Style Object</h2>
-    <h2 v-if="num === 0">The number is zero</h2>
-    <h2 v-else-if="num < 0">The number is negative</h2>
-    <h2 v-else-if="num > 0">The number is positive</h2>
-    <h2 v-else>Not a number</h2>
-    <h1>List Rendering</h1>
-    <h2 v-for="(name, index) in names" :key="name">{{ index }}{{ name }}</h2>
-    <hr />
-    <div v-for="name in names" :key="name">
-      <h2 v-if="name === 'Arathi'">{{ name }}</h2>
+    <div>
+      <h3 :style="{ backgroundColor: 'skyblue' }">Using v-html</h3>
+      <div>{{ greet }} {{ name }}</div>
+      <div v-html="greet"></div>
     </div>
-    <h2 v-for="names in fullname" :key="names">{{ names.firstName }} {{ names.lastName }}
-      <hr />
-    </h2>
-    <div v-for="(actor) in actors" :key="actor.name">
-      <h2 :style="{ color: 'cyan' }">
-        {{ actor.name }}
-      </h2>
-      <hr />
-      <h3 :style="{ color: 'yellowgreen' }" v-for="movie in actor.movies" :key="movie">
-        {{ movie }}
-      </h3>
-      <hr />
+    <hr />
+    <div>
+      <h3 :style="{ backgroundColor: 'skyblue' }">Styles</h3>
+      <h1 class="underline">Heading</h1>
+      <h4 :class="isPromoted && 'promoted'">Promoted movie</h4>
+      <h4 :class="isNew ? 'new' : 'soldout'">New Movie</h4>
+      <h4 :class="['new', 'promoted']">Newly Promoted</h4>
+      <h4 :class="[isPromoted && 'promoted', isSoldout && 'soldout']">Array conditional movie</h4>
+      <h4 :style="{ color: highlightColor, fontSize: headerSize + 'px', padding: '20px' }">Inline Style</h4>
+      <h4 :style="headerStyleObject">Style Object</h4>
+    </div>
+    <hr />
+    <div>
+      <h3 :style="{ backgroundColor: 'skyblue' }">Conditional rendering</h3>
+      <h4 v-if="num === 0">The number is zero</h4>
+      <h4 v-else-if="num < 0">The number is negative</h4>
+      <h4 v-else-if="num > 0">The number is positive</h4>
+      <h4 v-else>Not a number</h4>
+      <div>
+        <h3 :style="{ backgroundColor: 'skyblue' }">List Rendering</h3>
+        <div>
+          <h4 :style="{ backgroundColor: 'silver' }">Strings</h4>
+          <h4 v-for="(name, index) in names" :key="name">{{ index }} {{ name }}</h4>
+          <hr />
+          <div v-for="name in names" :key="name">
+            <h4 v-if="name === 'Arathi'">{{ name }}</h4>
+          </div>
+        </div>
+        <div>
+          <h4 :style="{ backgroundColor: 'silver' }">Objects</h4>
+
+          <h4 v-for="names in fullname" :key="names">{{ names.firstName }} {{ names.lastName }}
+            <hr />
+          </h4>
+        </div>
+
+        <div>
+          <h4 :style="{ backgroundColor: 'silver' }">Arrays</h4>
+
+          <div v-for="(actor) in actors" :key="actor.name">
+            <ui :style="{ color: 'cyan' }">
+              {{ actor.name }}
+            </ui>
+
+            <li :style="{ color: 'yellowgreen' }" v-for="movie in actor.movies" :key="movie">
+              {{ movie }}
+            </li>
+          </div>
+        </div>
+      </div>
+
 
     </div>
-    <h2>My Details</h2>
-    <hr />
-    <h3 :style="{ color: 'slategray' }" v-for="(value, index) in myInfo" :key="value">
-      {{ index }} : {{ value }}</h3>
-    <h2>
-      sum of 2 and 5 - {{ add(2, 5) }}
-    </h2>
-    <h2>5 multiply 6 - {{ multiply(6) }}</h2>
-    <h2>Event handling</h2>
-    <h1>{{ count }}</h1>
+    <h4>My Details</h4>
+
+    <p :style="{ color: 'slategray' }" v-for="(value, index) in myInfo" :key="value">
+      {{ index }} : {{ value }}</p>
+    <div>
+      <h3 :style="{ backgroundColor: 'skyblue' }">Methods</h3>
+      <h4>
+        sum of 2 and 5 - {{ add(2, 5) }}
+      </h4>
+      <h4>5 multiply 6 - {{ multiply(6) }}</h4>
+    </div>
+    <h3 :style="{ backgroundColor: 'skyblue' }">Event Handling</h3>
+    <h3>{{ count }}</h3>
     <button @click="increment(1)">Increment</button>
     <button @click="decrement">Decrement</button>
     <button @click="increment(5)">Increment by 5</button>
 
   </div>
   <div>
+    <h3 :style="{ backgroundColor: 'skyblue' }">Form Handling</h3>
+
     <pre>
       {{ JSON.stringify(formValues, null, 2) }}
     </pre>
   </div>
-  <form @submit.prevent="formSubmit">
+  <form @submit.prevent="formSubmit" class="form-container">
     <div>
       <label for="name">Name:</label><br>
-      <input type="text" id="name" v-model.trim.lazy="formValues.name">
+      <input type="text" id="name" v-model.lazy="formValues.name">
 
     </div>
     <div>
@@ -105,32 +135,42 @@
       <label>Years of Experience</label>
       <input type="radio" id="0-2" value="0-2" v-model="formValues.yearsOfExperience">
       <label for="0-2">0-2</label>
-      <input type="radio" id="0-3" value="0-3" v-model="formValues.yearsOfExperience">
-      <label for="0-2">2-4</label>
+      <input type="radio" id="2-4" value="2-4" v-model="formValues.yearsOfExperience">
+      <label for="2-4">2-4</label>
       <input type="radio" id="4+" value="4+" v-model="formValues.yearsOfExperience">
       <label for="4+">4+</label>
     </div>
     <div>
-      <button>submit</button>
+      <button class="form-button">submit</button>
     </div>
   </form>
-  <input v-model="newName" type="text" id="newName">
-  <button @click="changeName(newName)">Change name</button>
-  <h2>Full Name - {{ fullName }}</h2>
-  <button @click="items.push({ id: 4, title: 'Fridge', price: 30000, })">add item</button>
-  <h2>Total Price - {{ totalPrice }}</h2>
-  <h2 :style="{ color: 'brown' }">Items with price greater than 50000</h2>
-  <h2 :style="{ color: 'chartreuse' }" v-for="items in itemsGreaterThan50k" :key="items.id">{{ items.title }} {{
-    items.price
-  }}</h2>
-  <h2 :style="{ color: 'blueviolet' }">Volume (0-20)</h2>
-  <div class="volume">
-    <button class="btn" @click="volume += 2">+</button>
-    <h2> {{ volume }}
-    </h2>
-    <button class="btn" @click="volume -= 2">-</button>
+  <div :style="{ padding: '1rem' }"></div>
+  <div>
+    <h3 :style="{ backgroundColor: 'skyblue' }">Computed properties</h3>
+
+    <input :style="{ padding: '1rem', margin: 'auto' }" v-model="newName" type="text" id="newName">
+    <button @click="changeName(newName)">Change name</button>
+    <h4>Full Name - {{ fullName }}</h4>
+    <button @click="items.push({ id: 4, title: 'Fridge', price: 30000, })">add item</button>
+    <h4>Total Price - {{ totalPrice }}</h4>
+    <h4 :style="{ color: 'brown' }">Items with price greater than 50000</h4>
+    <h4 :style="{ color: 'chartreuse' }" v-for="items in itemsGreaterThan50k" :key="items.id">{{ items.title }} {{
+      items.price
+    }}</h4>
   </div>
-  <input type="text" v-model="movie">
+  <div>
+    <h3 :style="{ backgroundColor: 'skyblue' }">Watchers</h3>
+
+    <h3 :style="{ color: 'blueviolet' }">Volume (0-20)</h3>
+    <div class="volume">
+      <button class="btn" @click="volume -= 2">-</button>
+      <h2> {{ volume }} </h2>
+      <button class="btn" @click="volume += 2">+</button>
+
+
+    </div>
+    <input type="text" v-model="movie">
+  </div>
 </template>
 
 <script>
@@ -258,7 +298,7 @@ export default {
       handler(newmovie) {
         console.log(`Calling api with movie name ${newmovie}`);
       },
-      immediate:true,
+      immediate: true,
     }
   }
 }
@@ -338,5 +378,44 @@ select {
   background-image: none;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #abc1da;
+  padding: 5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.form-button {
+  padding: .5rem;
+  background-color: #142333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  min-width: 100px;
+
+}
+
+button:hover {
+  background-color: #44515f;
 }
 </style>
