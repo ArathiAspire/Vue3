@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h3 class="text-center">ChildC component</h3>
+        <h4 class="text-center">ChildC component</h4>
         <h4>Injected value - {{ username }}</h4>
         <h4>Injected value using composition - {{ value }}</h4>
         <h4>{{ count }}</h4>
