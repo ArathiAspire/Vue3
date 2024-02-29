@@ -7,6 +7,7 @@
 
   <ProvideInject />
   <TemplateRefs />
+  <Person />
 </template>
 
 <script>
@@ -16,6 +17,7 @@ import DemoTwo from './components/DemoTwo.vue';
 import Methods from './components/Methods.vue';
 import ProvideInject from './components/ProvideInject.vue';
 import TemplateRefs from './components/TemplateRefs.vue';
+import Person from './components/Person.vue';
 export default {
   name: 'App',
   components: {
@@ -24,7 +26,7 @@ export default {
     DemoTwo,
     Methods,
     ProvideInject,
-    TemplateRefs
+    TemplateRefs, Person
   }
 }
 </script>
