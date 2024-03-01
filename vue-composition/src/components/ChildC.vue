@@ -19,7 +19,7 @@ export default {
         const value = inject('c_user', 'default value')
         const count = inject('c_count', 0)
         const childHero = inject('c_hero', {})
-        const increment = inject('icrementCountFromPArent');
+        const increment = inject('icrementCountFromParent');
 
         return {
             value,

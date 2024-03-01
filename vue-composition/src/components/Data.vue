@@ -1,9 +1,9 @@
 <template>
     <div>
-        <h3> Options - {{ o_firstName }}</h3>
-        <h3>Compostion - {{ c_firstName }}</h3>
-        Full name:{{ state.firstName }} {{ state.lastName }}
-        Job:{{ state.Job }}
+        <p> Options - {{ o_firstName }}</p>
+        <p>Compostion - {{ c_firstName }}</p>
+        <p>Full name:{{ state.firstName }} {{ state.lastName }}</p>
+        <p>Job:{{ state.Job }}</p>
 
     </div>
 </template>
@@ -12,7 +12,7 @@
 import { ref, reactive } from 'vue'
 export default {
 
-    
+
     name: 'DataComponent',
     data() {
         return {
@@ -35,6 +35,9 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
+<style scoped>
+p{
+    color:rgb(48, 48, 109)
+}
 
 </style>

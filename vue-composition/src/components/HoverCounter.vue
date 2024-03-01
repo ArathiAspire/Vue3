@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h3 @mouseover="incrementCount">Hovered {{ count }} times</h3>
+        <h4 @mouseover="incrementCount">Hovered {{ count }} times</h4>
     </div>
 </template>
 

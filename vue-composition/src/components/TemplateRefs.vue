@@ -1,5 +1,5 @@
 <template>
-    <h3>Focusing input</h3>
+    <h4>Focusing input</h4>
     <input type="text" ref="inputRef" />
 </template>
 

@@ -1,21 +1,27 @@
 <template>
-  <h1>Composition API</h1>
-  <h2>Refs and reactive</h2>
+  <h2 :style="{color:'steelblue'}">Composition API</h2>
+  <h3>Refs and reactive</h3>
   <Data />
-  <h2>Reactive and toRefs</h2>
+
+  <h3>Reactive and toRefs</h3>
   <DemoOne />
   <DemoTwo />
-  <h2>Replacing methods</h2>
+
+  <h3>Replacing methods</h3>
   <Methods />
-  <h2>Provide and inject (passing data to nested childs without using props)</h2>
+
+  <h3>Provide and inject</h3>
   <ProvideInject />
-  <h2>Template Refs</h2>
+
+  <h3>Template Refs</h3>
   <TemplateRefs />
-  <h2>Props from parent to child and vise versa</h2>
+
+  <h3>Props from parent to child and vise versa</h3>
   <Person />
-  <h2>Resusing functionalities</h2>
+  
+  <h3>Resusing functionalities</h3>
   <ClickCounter />
-  <HoverCounter />
+  <HoverCounter />  
 </template>
 
 <script>
@@ -51,5 +57,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+h3{
+  color:rgb(119, 119, 153)
 }
 </style>

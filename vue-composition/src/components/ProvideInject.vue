@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1 class="text-center">{{ user }}</h1>
+        <h4 class="text-center">{{ user }}</h4>
         <ChildA/>
         <button @click="incrementCount">Increment Count in Parent</button>
        
@@ -34,7 +34,7 @@ export default {
        
         provide('c_count',count),
         provide('c_hero',state),
-        provide('icrementCountFromPArent',incrementCount)
+        provide('icrementCountFromParent',incrementCount)
         return{
             count,
             ...toRefs(state),

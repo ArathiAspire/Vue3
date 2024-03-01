@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="name-form">
         <label id="fname">Enter First name</label>
         <input type="text" v-model="fname" />
         <label id="fname">Enter Last name</label>
@@ -32,4 +32,23 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.name-form {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background-color: rgb(150, 164, 201);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+}
+</style>
