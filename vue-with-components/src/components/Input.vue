@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div :style="{padding:'3rem'}">
         <input type="text" :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" />
 
     </div>

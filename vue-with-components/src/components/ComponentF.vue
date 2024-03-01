@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div :style="{backgroundColor:'skyblue'}">
         <h2>I m ComponentF</h2>
-        <p> username from app - using provide and inject - {{username}}</p>
+        <b> username from app - using provide and inject - {{username}}</b>
     </div>
 </template>
 

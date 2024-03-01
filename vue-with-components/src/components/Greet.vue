@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2>Welcome {{name}}</h2>
+        <p :style="{color:'blue'}">Welcome {{name}}</p>
     </div>
 </template>
 

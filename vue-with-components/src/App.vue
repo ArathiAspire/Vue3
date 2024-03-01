@@ -1,5 +1,6 @@
 <template>
   <div class="container"></div>
+  <h2 :style="{ textDecoration: 'underline', color: 'steelblue' }">Component Based</h2>
   <button @click="showModal = true">Open Modal</button>
   <teleport to="#modal-root">
     <ModalComponent v-show="showModal" @close="showModal = false">
@@ -12,12 +13,16 @@
   <Greet name="Arathi" />
   <Greet name="Akshay" />
   <Greet :name="name" />
-  username - {{ username }}
+  <h4>username - {{ username }}</h4>
+
   <button @click="popupShow = true">Open Popup</button>
   <Popup v-show="popupShow" @close="onClosePopup" />
 
   <ComponentC />
   <InputComponent v-model="name" />
+  <hr />
+  <h2 :style="{ color: 'blue' }">Slots</h2>
+
   <CardComponent></CardComponent>
   <cardComponent>
     <h2>Card one</h2>
@@ -39,7 +44,8 @@
     </template>
 
   </CardComponent>
-  <h2>Slot Props</h2>
+  <hr />
+  <h2 :style="{ color: 'blue' }">Slot Props</h2>
   <NameList>
     <template v-slot:default="slotProps">
       {{ slotProps.firstName }} {{ slotProps.lastName }}
@@ -57,15 +63,20 @@
 
     </template>
   </NameList>
+  <hr />
   <h4>Component Styles</h4>
   <ChildStyles />
-  <h3>Dynamic Component</h3>
-  <button @click="activeTab = 'TabA'">TabA</button>
-  <button @click="activeTab = 'TabB'">TabB</button>
-  <button @click="activeTab = 'TabC'">TabC</button>
-  <keep-alive>
-    <component :is="activeTab" />
-  </keep-alive>
+  <hr />
+
+  <h2 :style="{ color: 'blue' }">Dynamic Components</h2>
+  <div>
+    <button @click="activeTab = 'TabA'" :class="{ 'active': activeTab === 'TabA' }">TabA</button>
+    <button @click="activeTab = 'TabB'" :class="{ 'active': activeTab === 'TabB' }">TabB</button>
+    <button @click="activeTab = 'TabC'" :class="{ 'active': activeTab === 'TabC' }">TabC</button>
+    <keep-alive>
+      <component :is="activeTab" />
+    </keep-alive>
+  </div>
   <!-- <TabA v-if="activeTab === 'TabA'" />
   <TabB v-if="activeTab === 'TabB'" />
   <TabC v-if="activeTab === 'TabC'" /> -->
@@ -139,6 +150,38 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+/* div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px;
+} */
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button.active {
+  background-color: #3498db;
+  color: #fff;
+}
+
+/* Add styles for the content of each tab as needed */
+.TabA,
+.TabB,
+.TabC {
+  /* Your styles for each tab content */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 20px;
 }
 
 /* h4{

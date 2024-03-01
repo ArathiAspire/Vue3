@@ -1,6 +1,7 @@
 <template>
     <div>
-        <h4>TabA</h4>
+        <h4>Tab A Content</h4>
+    <p>This is the content for Tab A.</p>
     </div>
 </template>
 
