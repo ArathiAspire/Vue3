@@ -17,6 +17,7 @@
       <h4 :style="headerStyleObject">Style Object</h4>
     </div>
     <hr />
+
     <div>
       <h3 :style="{ backgroundColor: 'skyblue' }">Conditional rendering</h3>
       <h4 v-if="num === 0">The number is zero</h4>
@@ -24,6 +25,7 @@
       <h4 v-else-if="num > 0">The number is positive</h4>
       <h4 v-else>Not a number</h4>
       <div>
+
         <h3 :style="{ backgroundColor: 'skyblue' }">List Rendering</h3>
         <div>
           <h4 :style="{ backgroundColor: 'silver' }">Strings</h4>
@@ -44,14 +46,15 @@
         <div>
           <h4 :style="{ backgroundColor: 'silver' }">Arrays</h4>
 
-          <div v-for="(actor) in actors" :key="actor.name">
-            <ui :style="{ color: 'cyan' }">
+          <div v-for="(actor) in actors" :key="actor.name" class="actor-container">
+            <ui class="ui" :style="{ color: 'cyan' }">
               {{ actor.name }}
             </ui>
-
-            <li :style="{ color: 'yellowgreen' }" v-for="movie in actor.movies" :key="movie">
-              {{ movie }}
-            </li>
+            <ul class="movie-list">
+              <li :style="{ color: 'yellowgreen' }" v-for="movie in actor.movies" :key="movie">
+                {{ movie }}
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -417,5 +420,26 @@ input {
 
 button:hover {
   background-color: #44515f;
+}
+
+.actor-container {
+  margin-bottom: 20px;
+}
+
+.ui{
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.movie-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.movie-list li {
+  font-size: 14px;
+  margin-bottom: 4px;
 }
 </style>

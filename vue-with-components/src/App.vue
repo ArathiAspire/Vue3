@@ -11,8 +11,8 @@
   </teleport>
 
   <Greet name="Arathi" />
-  <Greet name="Akshay" />
   <Greet :name="name" />
+
   <h4>username - {{ username }}</h4>
 
   <button @click="popupShow = true">Open Popup</button>
@@ -22,29 +22,31 @@
   <InputComponent v-model="name" />
   <hr />
   <h2 :style="{ color: 'blue' }">Slots</h2>
+  <div class="card-container">
+    <CardComponent></CardComponent>
+    <cardComponent>
+      <h2>Card one</h2>
+    </cardComponent>
+    <CardComponent>
+      <img src="https://pngimg.com/uploads/iphone/iphone_PNG5728.png" alt="iphone image" width="100" />
+    </CardComponent>
+    <CardComponent>
+      <template v-slot:header>
+        <h3>Header</h3>
 
-  <CardComponent></CardComponent>
-  <cardComponent>
-    <h2>Card one</h2>
-  </cardComponent>
-  <CardComponent>
-    <img src="https://th.bing.com/th/id/OIP.TV5B1xBNmsCFzSUT40sAbgHaNK?rs=1&pid=ImgDetMain">
-  </CardComponent>
-  <CardComponent>
-    <template v-slot:header>
-      <h3>Header</h3>
+      </template>
+      <template v-slot:default>
+        <img src="https://pngimg.com/uploads/iphone/iphone_PNG5728.png" alt="iphone image" width="100" />
+      </template>
+      <template v-slot:footer>
+        <button>View Details</button>
 
-    </template>
-    <template v-slot:default>
-      <img src="https://th.bing.com/th/id/OIP.TV5B1xBNmsCFzSUT40sAbgHaNK?rs=1&pid=ImgDetMain">
-    </template>
-    <template v-slot:footer>
-      <button>View Details</button>
+      </template>
 
-    </template>
-
-  </CardComponent>
+    </CardComponent>
+  </div>
   <hr />
+
   <h2 :style="{ color: 'blue' }">Slot Props</h2>
   <NameList>
     <template v-slot:default="slotProps">
@@ -67,6 +69,9 @@
   <h4>Component Styles</h4>
   <ChildStyles />
   <hr />
+  <teleport to="#portal-root">
+    <PortalComponent />
+  </teleport>
 
   <h2 :style="{ color: 'blue' }">Dynamic Components</h2>
   <div>
@@ -80,9 +85,6 @@
   <!-- <TabA v-if="activeTab === 'TabA'" />
   <TabB v-if="activeTab === 'TabB'" />
   <TabC v-if="activeTab === 'TabC'" /> -->
-  <Teleport to="#portal-root">
-    <PortalComponent />
-  </Teleport>
 </template>
 
 <script>
@@ -134,8 +136,13 @@ export default {
   },
   methods: {
     onClosePopup(msg) {
-      this.popupShow = false
-      console.log("msg", msg);
+      if (!msg) {
+        this.popupShow = true
+      } else {
+        this.popupShow = false
+        console.log("message: ", msg);
+      }
+
     }
   }
 }
@@ -150,6 +157,17 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  align-items: center;
+
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 3rem;
+  /* Allows cards to wrap onto the next line if the screen is too narrow */
 }
 
 /* div {
