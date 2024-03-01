@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h3>Parent Component</h3>
+        <h4>Parent Component</h4>
         <button @click="showChild = !showChild">Toggle Child Visibility</button>
         <ChildComponent v-show="showChild" />
     </div>

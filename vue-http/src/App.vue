@@ -1,10 +1,13 @@
 <template>
   <div>
-    <TemplateRef />
-    <click-counter />
-    <hover-counter />
-    <CreatePosts />
+    <h2 :style="{color:'green'}">Vue-http</h2>
     <PostLists />
+    <CreatePosts />
+    <TemplateRef />
+    <h3>Mixins</h3>
+    <click-counter />
+    <hover-counter /> 
+    <h3>Component Lifecycles</h3>
     <Parent />
   </div>
 </template>
@@ -39,5 +42,23 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  padding: .5rem;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 15px;
+  cursor: pointer;
+  background-color: #4d8d5d;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #64795d;
+  color: #fff;
+}
+h3{
+  color: #4ea163;
 }
 </style>

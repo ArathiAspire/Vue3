@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <h2>This is the Popup</h2>
-        <input type="text" v-model="msg" />
+        <input type="text" v-model.trim="msg" />
         <button @click="$emit('close', msg)">Close the popup</button>
     </div>
 </template>
@@ -13,7 +13,7 @@ export default {
         close: (msg) => {
             if (!msg) {
                 alert("Please enter a message");
-                return false
+                return false;
             } else {
                 return true;
             }
@@ -22,6 +22,7 @@ export default {
     data() {
         return {
             msg: ''
+    
         }
     }
 }

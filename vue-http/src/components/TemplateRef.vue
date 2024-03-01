@@ -1,4 +1,5 @@
 <template>
+    <h3>Template Refs</h3>
     <div>
         <input type="text" ref="inputRef" />
     </div>

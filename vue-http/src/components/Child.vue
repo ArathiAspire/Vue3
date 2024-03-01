@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h3>Child Component</h3>
+        <h4>Child Component</h4>
     </div>
 </template>
 

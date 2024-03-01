@@ -91,7 +91,7 @@
     </div>
     <div>
       <label for="age">age:</label><br>
-      <input @keyup.enter="formSubmit" type="number" id="age" v-model.trim="formValues.age">
+      <input @keyup.enter="formSubmit" type="number" id="age" v-model="formValues.age">
 
     </div>
     <div>
