@@ -68,7 +68,7 @@
     <div>
       <h3 :style="{ backgroundColor: 'skyblue' }">Methods</h3>
       <h4>
-        sum of 2 and 5 - {{ add(2, 5) }}
+        sum - {{ add(3, 5) }}
       </h4>
       <h4>5 multiply 6 - {{ multiply(6) }}</h4>
     </div>
@@ -197,7 +197,7 @@ export default {
         fontSize: '50px',
         padding: '20px'
       },
-      num: "hi",
+      num: 'ghs',
       names: ["Arathi", "Amrutha", "Aparna"],
       fullname: [
         { firstName: "John", lastName: "Doe" },
