@@ -16,9 +16,9 @@
   <h3>Template Refs</h3>
   <TemplateRefs />
 
-  <h3>Props from parent to child and vise versa</h3>
+  <h3>Props</h3>
   <Person />
-  
+
   <h3>Resusing functionalities</h3>
   <ClickCounter />
   <HoverCounter />  

@@ -1,5 +1,6 @@
 <template>
     <div class="name-form">
+
         <label id="fname">Enter First name</label>
         <input type="text" v-model="fname" />
         <label id="fname">Enter Last name</label>
